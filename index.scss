@@ -1,0 +1,24 @@
+$list: width height line-height bordius;
+@mixin box($wides){
+    @if length($wides) == 1{
+        #{nth($list, 1)}: nth($wides, 1);
+    }
+    @else if length($wides) ==2 {
+        #{nth($list, 1)}: nth($wides, 1);
+        #{nth($list, 2)}: nth($wides, 2);
+    }
+    @else if length($wides) ==3 {
+        #{nth($list, 1)}: nth($wides, 1);
+        #{nth($list, 2)}: nth($wides, 2);
+        #{nth($list, 3)}: nth($wides, 3);
+    }
+    @else {
+        #{nth($list, 1)}: nth($wides, 1);
+        #{nth($list, 2)}: nth($wides, 2);
+        #{nth($list, 3)}: nth($wides, 3);
+        #{nth($list, 4)}: nth($wides, 4);
+    }
+}
+.body{
+    @include box(15px 20px 25px 200px);
+}
